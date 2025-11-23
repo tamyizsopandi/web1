@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terjemah Qur'an</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="http://localhost/tamyiz/css/style.css" />
+  </head>
+  <body>
+    <div class="container py-5 text-center">
+      <img src="images/menu/quiz_text.png" width="200px" alt="Terjemah" />
+      <p>Quiz Tamyiz.</p>
+      <a
+        href="javascript:void(0)"
+        onclick="goToPage('menu.html')"
+        class="btn btn-outline-primary mt-4"
+        title="Kembali ke Menu"
+      >
+        <i class="fas fa-home fa-2x"></i>
+      </a>
+    </div>
+
+    
+    <audio id="clickSound" src="sounds/home.wav" preload="auto"></audio>
+
+    <script>
+      const clickSound = document.getElementById("clickSound");
+
+      function playClickSound() {
+        if (clickSound) clickSound.play();
+      }
+
+      function goToPage(url) {
+        playClickSound();
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+          window.location.href = url;
+        }, 500);
+      }
+    </script>
+  </body>
+</html>

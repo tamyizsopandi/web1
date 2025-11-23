@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Logout</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f8f9fa;
+    }
+    .message {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    a {
+      text-decoration: none;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+    a:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="message">Anda telah berhasil logout.</div>
+  <a href="index.html">Kembali ke Login</a>
+
+  <script>
+    // Hapus data login dari localStorage atau sessionStorage
+    localStorage.removeItem('userToken');  // atau sessionStorage.removeItem('userToken');
+    sessionStorage.clear(); // jika pakai session storage
+  </script>
+
+</body>
+</html>
