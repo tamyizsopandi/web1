@@ -1,0 +1,322 @@
+body {
+  margin: 10px;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: aquamarine;
+  background-size: cover;
+  text-align: center;
+}
+
+@font-face {
+  font-family: "LPMQ Isep Misbah";
+  src: url("fonts/lpmq.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Retrow Mentho";
+  src: url("fonts/retrowMentho.ttf") format("truetype");
+}
+
+/* TULISAN ARAB */
+.arabic-wrapper {
+  direction: rtl;
+  overflow: hidden;
+  display: inline-block;
+  transform: scaleX(-1); /* membalik tulisan */
+}
+
+.arabic {
+  font-family: "LPMQ Isep Misbah";
+  font-size: 32px;
+  direction: rtl;
+  display: inline-block;
+  transform: scaleX(-1);
+  color: blue;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  text-shadow: 1px 1px 1px rgb(244, 106, 71);
+  line-height: 1.8;
+
+  /* ✅ Perubahan penting */
+  white-space: normal; /* Memungkinkan teks turun ke baris baru */
+  word-break: break-word; /* Jika ada kata panjang, bisa dipotong */
+  overflow: hidden;
+
+  visibility: hidden;
+  animation: typingFull 2s ease 2s forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes typingFull {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes typingIndo {
+  from {
+    width: 0;
+  }
+  to {
+    width: 40ch; /* Panjang sesuai jumlah huruf terjemahan */
+  }
+}
+
+/* TERJEMAHAN */
+.translation {
+  opacity: 0;
+  animation: fadeIn 2s 2s forwards;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: blue; /* ✅ Warna biru */
+  font-style: italic;
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.surah {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 8px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  opacity: 0;
+  animation: fadeIn 2s 2s forwards;
+  margin-top: 10px;
+}
+
+/* JUDUL */
+.title {
+  font-family: "Retrow Mentho";
+  font-size: 48px;
+  margin-top: 30vh;
+  animation: zoomIn 2s ease-out forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* SUBJUDUL */
+.subtitle {
+  margin-top: 20px;
+  font-size: 20px;
+  opacity: 0.5;
+  animation: fadeIn 2s 2s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* TOMBOL */
+.next-btn {
+  display: block; /* Supaya tidak sejajar horizontal */
+  width: 150px;
+  padding: 12px 24px;
+  background-color: #e73509;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px black;
+  opacity: 0;
+  animation: fadeIn 2s 4s forwards;
+}
+/* HALAMAN MENU */
+.menu-page,
+.submenu-page {
+  display: none;
+  padding: 20px;
+}
+
+.menu-item {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+}
+
+.title-.title-logo {
+  max-width: 300px;
+  margin: 20vh auto 20px auto; /* pastikan center dan ada jarak ke bawah */
+  display: block;
+  opacity: 0;
+  transform: scale(0);
+  animation: zoomIn 2s ease-out forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.subtitle {
+  display: block; /* penting: agar tidak duduk di samping logo */
+  margin: 0 auto 32px auto;
+  text-align: center;
+  font-family: "Retrow Mentho", cursive;
+  font-size: 28px;
+  color: green; /* ✅ Ubah warna teks jadi hijau */
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  text-shadow: 1px 1px 2px black;
+  opacity: 0;
+  animation: fadeIn 2s 2s forwards;
+}
+.menu-icon a {
+  text-decoration: none;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  justify-items: center;
+  margin-top: 30px;
+}
+
+.menu-icon {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.menu-icon:hover {
+  transform: scale(1.05);
+}
+
+.menu-icon img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px;
+  height: auto;
+}
+/* Gambar teks (di bawah icon) */
+.menu-icon img + img {
+  max-width: 200px;
+  margin-top: 10px;
+}
+
+/* Media Query untuk layar sedang (tablet, dsb) */
+@media (max-width: 992px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Media Query untuk layar kecil (mobile) */
+@media (max-width: 576px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Efek fade-out saat klik menu */
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.exit-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  color: #dc3545; /* merah */
+  z-index: 1000;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.exit-icon:hover {
+  transform: scale(1.2);
+  color: #a71d2a;
+}
+p {
+  text-align: justify;
+}
+h2 {
+  font-weight: bold;
+}
+.text_menu {
+  color: rgb(255, 255, 255);
+  font-family: "Retrow Mentho", cursive;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black, 3px 3px 2px rgba(17, 17, 17, 0.8);
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+.judul {
+  color: rgb(232, 246, 128);
+  font-family: "Retrow Mentho", cursive;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black, 3px 3px 2px rgba(17, 17, 17, 0.8);
+  font-size: 1.6rem;
+  margin-top: 10px;
+  font-size: 36px;
+}
+.sub_judul {
+  font-weight: bold;
+  font-size: 20px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* ⬅️ Vertikal di tengah */
+  align-items: center; /* ⬅️ Horizontal di tengah */
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.menu-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.menu-icon {
+  text-align: center;
+}
+
+.menu-icon img {
+  display: block;
+  margin: 0 auto;
+}
+/* ⬇️ Menu baru turun ke bawah hanya jika layar < 400px */
+@media (max-width: 400px) {
+  .menu-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}

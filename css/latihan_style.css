@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "LPMQ Isep Misbah";
+  src: url("http://localhost/tamyiz/fonts/lpmq.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Retrow Mentho";
+  src: url("http://localhost/tamyiz/fonts/retrowMentho.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("http://localhost/tamyiz/fonts/Roboto-Medium.ttf") format("truetype");
+}
+.judul{
+    font-size: 24px;
+    font-weight: 600;
+}
+.ingat_langkah{
+    border: 2px solid;
+    border-radius: 2%;
+    color: blue;
+    padding: 10px;
+}
+.langkah{
+    font-family: Roboto;
+    font-size: 16px;
+    text-align: left;
+    font-style: italic;
+    line-height: 1.2;
+}
+.contoh{
+    font-family: LPMQ Isep Misbah;
+    font-size: 18px;
+    text-align: left;
+    margin-left: 20px;
+    line-height: 1.2;
+    color: red;
+}
+.ayat{
+    font-family: LPMQ Isep Misbah;
+    font-size: 18px;
+    color: blue;
+    line-height: 2.5;
+    text-align: justify;
+    direction: rtl;
+    border: 2px solid;
+    border-radius: 2%;
+    padding: 20px 20px;
+    margin-top: 10px;
+
+}
